@@ -7,4 +7,5 @@ class Post
     @text = text
     @sponsored = sponsored
   end
+
 end

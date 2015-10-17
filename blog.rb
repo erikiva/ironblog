@@ -1,5 +1,3 @@
-
-
 class Blog
 
 	attr_accessor :post_list, :posts_per_page
@@ -14,13 +12,9 @@ class Blog
 	end
 
 	def compose_post post
-
 		post_var = ""
-
 		post_var += post.sponsored ? "******#{post.title}******".colorize(:red) : post.title
-
 		post_var += "\n**************\n#{post.text}\n----------------\n"
-
 	end
 
 	def sort_all_posts
@@ -35,7 +29,6 @@ class Blog
 			front_page_text += compose_post(front_page[post]) unless post >= front_page.count
 		end
 		front_page_text
-
 	end
 
 	def print_pagination num_pages, current_page
@@ -48,7 +41,6 @@ class Blog
 			end
 		end
 		puts "\n"
-
 	end
 
 	def display_page(front_page, number_pages, page)
@@ -58,7 +50,6 @@ class Blog
 	end
 
 	def publish_front_page
-
 		front_page = sort_all_posts
 		number_pages = (@post_list.count.to_f / @posts_per_page).ceil
 		#binding.pry
@@ -75,7 +66,6 @@ class Blog
 			print "Type the page number you want to go to, q to quit: "
 			page = gets.chomp
 		end
-
 	end
 
 end
